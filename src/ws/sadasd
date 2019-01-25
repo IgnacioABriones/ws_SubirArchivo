@@ -1,0 +1,22 @@
+        String path="";
+		String res="";
+		int error=0;
+		byte[] data=null;
+
+
+		data= z + Base64.getDecoder().decode(archivo);
+
+
+		Path dest=Paths.get(path, nombrearchivo);
+
+		Files.write(dest,data);
+		EnvioFtp.Envio("server", "usuario", "pass", "archivo");
+
+		}
+         }
+         if(error==0)
+         {
+        	 res="Exito";
+         }
+		return res;
+	}
